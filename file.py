@@ -46,7 +46,8 @@ def get_ai_msg(patient_prompt):
     messages = [  
         {
             "role": "system",
-            "content": """ You are a medical assistant capable of extracting structured details from unstructured clinical text. Your task is to identify specific categories of information from the provided text. Additionally, you need to identify and flag any unknown or unfamiliar terms that may need further clarification or special handling.
+            "content": """
+              You are a medical assistant capable of extracting structured details from unstructured clinical text. Your task is to identify specific categories of information from the provided text. Additionally, you need to identify and flag any unknown or unfamiliar terms that may need further clarification or special handling.
             The categories you need to extract from the text are:
          1. **Status**: Identify the patient's health status, such as "stable," "critical," "recovering," "improving," etc.
          2. **Pharmacy**: Extract references to medication, prescriptions, or pharmacy-related details (e.g., medication names, dosages, directions).
@@ -61,7 +62,7 @@ def get_ai_msg(patient_prompt):
              {
                   "status": "stable",
                   "pharmacy": {
-                  "medications": **separate new medicines, each medicines prescribed should be made put into another category of medicine, expanding their name, dosage, unit, ICD code, frequency**
+                  "medications": [**separate new medicines, each medicines prescribed should be made put into another category of medicine, expanding their name, dosage, unit, ICD code, frequency of medication**]
          [
             {
                   "name": medicine name,  // This is a literal string, not a placeholder 

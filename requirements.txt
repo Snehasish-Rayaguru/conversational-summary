@@ -1,0 +1,4 @@
+python-dotenv
+json
+ast
+langchain-groq
