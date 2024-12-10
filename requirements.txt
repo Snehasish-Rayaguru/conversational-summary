@@ -1,4 +1,4 @@
 python-dotenv
-json
+# json
 ast
 langchain-groq

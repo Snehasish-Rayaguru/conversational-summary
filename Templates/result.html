@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .table-container {
+            margin-top: 30px;
+        }
+        .content-summary {
+            margin-top: 20px;
+        }
+        h3 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Patient Report</h1>
+
+        <!-- Major Problems -->
+        <div class="table-container">
+            <h3>Major Problems</h3>
+            <ul>
+                {% for problem in major_problems %}
+                    <li>{{ problem }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Medicines Table -->
+        <div class="table-container">
+            <h3>Medicines</h3>
+            <div>
+                {{ medicines | safe }}
+            </div>
+        </div>
+
+        <!-- Doctor Instructions -->
+        <div class="table-container">
+            <h3>Doctor Instructions</h3>
+            <ul>
+                {% for instruction in doctor_instructions %}
+                    <li>{{ instruction }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Content Summary -->
+        <div class="content-summary">
+            <h3>Content Summary</h3>
+            <p>{{ content_summary }}</p>
+        </div>
+
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+
+</body>
+</html>
